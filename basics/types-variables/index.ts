@@ -30,6 +30,15 @@ let point: { x: number; y: number } = {
  */
 const logNum: (i: number) => void = (i: number) => {};
 
+let isFunc: (a: number) => boolean; // telling that isFunc can be initialised as a function with return type boolean
+
+let func = (a: number, b: number): void => {};
+
+// Functions with callbacks
+
+let callFunc = (a: number, b: number, cb: (num: number) => void) => {
+  cb(a + b);
+};
 // Dealing with JSON objcts.(type:any)
 
 const json = '{"x":10, "y":20}';
@@ -44,10 +53,23 @@ let isAdmin: boolean;
 
 isAdmin = true;
 
-// If the value must have multiple tpes and it is not known
+// If the value must have multiple types and it is not known or // Union types
 
 let data: boolean | string;
 
+let example: "is-true" | "is-false"; // custom
+
 data = "xyzw"; // data = true,  value can either be string or a boolean
+example = "is-true"; //
+
+// Type aliases
+
+type BooleanCheck = Boolean | String;
+
+let custom: BooleanCheck;
 
 // More of functions in functions.ts
+
+// never return type: For basically functions throwing errors
+
+// unknown: for values that are not known(it's types are not known)
